@@ -14,7 +14,7 @@ public class EventManager {
         EventManager mgr = new EventManager();
 
         if (args[0].equals("store")) {
-            mgr.createAndStoreEvent("Examen ISMA-4", new Date());
+            mgr.createAndStoreEvent("My Examen isma-4", new Date());
         }
 
         HibernateUtil.getSessionFactory().close();
@@ -24,7 +24,6 @@ public class EventManager {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
 
-        //
         Event theEvent = new Event();
         theEvent.setTitle(title);
         theEvent.setDate(theDate);
